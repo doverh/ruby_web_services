@@ -27,7 +27,8 @@ end
 		
 	
 	get "/" do
-	end
+	   erb :hello
+    end
 
 	
 # 	post '/post_answer' do
