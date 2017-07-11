@@ -47,15 +47,15 @@ post '/submit_answer_app' do
     
     #Assign Variables correct values
     v_email = data_hash["email"]
-    v_input_answer = data_hash["input_answer"].to_i
-    v_tokens = params["tokens"].to_i - 1
-    v_question_id = params["question_id"]
-    date = Time.now.strftime("%d/%m/%Y %H:%M:%S")
-    db = connection()
-    db.exec("INSERT INTO answers (user_name, answer, date, question_id) VALUES ('#{v_email}', '#{v_answer}', '#{date}', '#{v_question_id}')")
-    #db.exec("UPDATE user_accounts SET tokens='#{v_tokens}' WHERE email = '#{v_email}'")
-    db.close
-    # session[:question_id] = ''
+    # v_input_answer = data_hash["input_answer"].to_i
+    # v_tokens = params["tokens"].to_i - 1
+    # v_question_id = params["question_id"]
+    # date = Time.now.strftime("%d/%m/%Y %H:%M:%S")
+    # db = connection()
+    # db.exec("INSERT INTO answers (user_name, answer, date, question_id) VALUES ('#{v_email}', '#{v_answer}', '#{date}', '#{v_question_id}')")
+    # #db.exec("UPDATE user_accounts SET tokens='#{v_tokens}' WHERE email = '#{v_email}'")
+    # db.close
+    # # session[:question_id] = ''
     # redirect '/start_game'=end
     "Post successful -thanks for the info!#{v_email}"  # feedback for Xcode console (successful POST)
 end
