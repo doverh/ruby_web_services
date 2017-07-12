@@ -14,20 +14,30 @@ require 'pg'
 
 	
 	def connection()
-  db_params = {host: ENV['host'],
+    db_params = {host: ENV['host'],
     port: ENV['port'],
     dbname: ENV['dbname'],
     user: ENV['user'],
     password: ENV['password']
-  }
+    }
 
   db = PG::Connection.new(db_params)
 end
 
+
+enable 'sessions'
 		
 	
 	get "/" do
-	   erb :hello
+	   
+        if connection()
+           session[:result] = "Connect"
+        else
+            session[:result] = "Not Connected"    
+
+       erb :hello, :locals => {:result=> session[:result]}
+
+
     end
 
 	
