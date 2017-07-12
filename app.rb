@@ -47,8 +47,8 @@ post '/submit_answer_app' do
     #email = JSON.parse(params[:email])
     
     #Assign Variables correct values
-    #v_email = data_hash["email"]
-    # v_input_answer = data_hash["input_answer"].to_i
+    v_email = data_hash["email"]
+    v_input_answer = data_hash["input_answer"].to_i
     # v_tokens = params["tokens"].to_i - 1
     # v_question_id = params["question_id"]
     # date = Time.now.strftime("%d/%m/%Y %H:%M:%S")
