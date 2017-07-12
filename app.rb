@@ -14,11 +14,11 @@ require 'pg'
 
 	
 	def connection()
-  db_params = {host: ENV['dbhost'],
-    port: ENV['dbport'],
+  db_params = {host: ENV['host'],
+    port: ENV['port'],
     dbname: ENV['dbname'],
-    user: ENV['dbuser'],
-    password: ENV['dbpassword']
+    user: ENV['user'],
+    password: ENV['password']
   }
 
   db = PG::Connection.new(db_params)
