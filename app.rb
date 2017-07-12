@@ -70,5 +70,5 @@ post '/submit_answer_app' do
     db.close
     # # session[:question_id] = ''
     # redirect '/start_game'=end
-    "Post successful -thanks for the info! #{v_email} , #{v_input_answer}"  # feedback for Xcode console (successful POST)
+    "Post successful -thanks for the info! #{v_email} , #{v_answer}"  # feedback for Xcode console (successful POST)
 end
