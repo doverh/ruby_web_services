@@ -41,13 +41,13 @@ end
 
 
 post '/submit_answer_app' do
-    data_hash = {"email"=>params[:email], "input_answer"=>params[:input_answer], "tokens"=>params[:tokens], "question_id"=>params[:question_id]}
+    #data_hash = {"email"=>params[:email], "input_answer"=>params[:input_answer], "tokens"=>params[:tokens], "question_id"=>params[:question_id]}
 
     #JSON TO BE IMPLEMENTED
     #email = JSON.parse(params[:email])
     
     #Assign Variables correct values
-    v_email = data_hash["email"]
+    #v_email = data_hash["email"]
     # v_input_answer = data_hash["input_answer"].to_i
     # v_tokens = params["tokens"].to_i - 1
     # v_question_id = params["question_id"]
@@ -58,5 +58,5 @@ post '/submit_answer_app' do
     # db.close
     # # session[:question_id] = ''
     # redirect '/start_game'=end
-    "Post successful -thanks for the info!#{v_email}"  # feedback for Xcode console (successful POST)
+    "Post successful -thanks for the info!"  # feedback for Xcode console (successful POST)
 end
