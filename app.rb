@@ -61,8 +61,8 @@ post '/submit_answer_app' do
     #Assign Variables correct values
     v_email = data_hash["email"]
     v_answer = data_hash["input_answer"].to_i
-    v_tokens = params["tokens"].to_i - 1
-    v_question_id = params["question_id"]
+    v_tokens = data_hash["tokens"].to_i - 1
+    v_question_id = data_hash["question_id"]
     v_date = Time.now.strftime("%d/%m/%Y %H:%M:%S")
     db = connection()
     db.exec("INSERT INTO answers (user_name, answer, date, question_id) VALUES ('#{v_email}', '#{v_answer}', '#{v_date}', '#{v_question_id}')")
