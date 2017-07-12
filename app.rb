@@ -34,7 +34,7 @@ enable 'sessions'
            session[:result] = "Connect"
         else
             session[:result] = "Not Connected"    
-
+        end
        erb :hello, :locals => {:result=> session[:result]}
 
 
