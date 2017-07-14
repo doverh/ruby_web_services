@@ -83,7 +83,7 @@ post '/submit_login' do
     result = db.exec("SELECT user_name from user_accounts where user_name = '#{v_user}' and password = '#{v_pass}'")
     #db.exec("UPDATE user_accounts SET tokens='#{v_tokens}' WHERE email = '#{v_email}'")
     db.close
-    if !result.nil?
+    if (result)
         "true"
     else
         "false"
