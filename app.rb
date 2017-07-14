@@ -80,10 +80,10 @@ post '/submit_login' do
     v_user = data_hash["user"]
     v_pass = data_hash["pass"]
     db = connection()
-    result = db.exec("SELECT user_name from user_accounts where user_name = '#{v_user}' and password = '#{v_pass}'s")
+    result = db.exec("SELECT user_name from user_accounts where user_name = '#{v_user}' and password = '#{v_pass}'")
     #db.exec("UPDATE user_accounts SET tokens='#{v_tokens}' WHERE email = '#{v_email}'")
     db.close
-    if (result)
+    if !result.nil?
         "true"
     else
         "false"
