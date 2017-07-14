@@ -72,3 +72,20 @@ post '/submit_answer_app' do
     # redirect '/start_game'=end
     "Post successful -thanks for the info! #{v_email} , #{v_answer}"  # feedback for Xcode console (successful POST)
 end
+
+post '/submit_login' do
+    data_hash = {"user"=>params[:user], "pass"=>params[:pass]}
+
+    #Assign Variables correct values
+    v_user = data_hash["user"]
+    v_pass = data_hash["pass"]
+    db = connection()
+    result = db.exec("SELECT user_name from user_accounts where user_name = '#{v_user}' and password = '#{v_pass}'s")
+    #db.exec("UPDATE user_accounts SET tokens='#{v_tokens}' WHERE email = '#{v_email}'")
+    db.close
+    if (result)
+        "true"
+    else
+        "false"
+    end    
+end
