@@ -102,7 +102,8 @@ post '/register' do
     v_pass = data_hash["pass"]
     v_email = data_hash["email"]
     db = connection()
-    result = db.exec("INSERT into user_accounts(first_name, last_name, email, user_name, password) VALUES ('#{v_fname}','#{v_lname}','#{v_email}','#{v_user}','#{v_pass}')")
+    db.exec("INSERT into user_accounts(first_name, last_name, email, user_name, password) VALUES ('#{v_fname}','#{v_lname}','#{v_email}','#{v_user}','#{v_pass}')")
     db.close  
+    result="true"
     result
 end
