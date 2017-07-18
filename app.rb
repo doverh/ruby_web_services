@@ -90,3 +90,25 @@ post '/submit_login' do
     end   
     results
 end
+
+
+post '/register' do
+    data_hash = {"firstname"=>params[:fname],"lastname"=>params[:lname],"user"=>params[:user],"pass"=>params[:pass],"email"=>params[:email]}
+
+    #Assign Variables correct values
+    v_fname = data_hash["firstname"]
+    v_lname = data_hash["lastname"]
+    v_user = data_hash["user"]
+    v_pass = data_hash["pass"]
+    v_email = data_hash["email"]
+    db = connection()
+    result = db.exec("INSERT into user_accounts(first_name, last_name, email, user_name, password) VALUES ('#{v_fname}','#{v_lname}','#{v_user}','#{v_passemailv_pass}');
+    #db.exec("UPDATE user_accounts SET tokens='#{v_tokens}' WHERE email = '#{v_email}'")
+    db.close
+     if result.count > 0
+        results = "true"
+     else
+        results = "false"
+    end   
+    results
+end
