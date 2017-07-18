@@ -102,13 +102,7 @@ post '/register' do
     v_pass = data_hash["pass"]
     v_email = data_hash["email"]
     db = connection()
-    result = db.exec("INSERT into user_accounts(first_name, last_name, email, user_name, password) VALUES ('#{v_fname}','#{v_lname}','#{v_user}','#{v_passemailv_pass}');
-    #db.exec("UPDATE user_accounts SET tokens='#{v_tokens}' WHERE email = '#{v_email}'")
-    db.close
-     if result.count > 0
-        results = "true"
-     else
-        results = "false"
-    end   
-    results
+    result = db.exec("INSERT into user_accounts(first_name, last_name, email, user_name, password) VALUES ('#{v_fname}','#{v_lname}','#{v_email}','#{v_user}','#{v_pass}')")
+    db.close  
+    result
 end
